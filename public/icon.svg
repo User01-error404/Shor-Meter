@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0c29"/>
+      <stop offset="100%" stop-color="#1a1040"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF6B35"/>
+      <stop offset="100%" stop-color="#FF3CAC"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="114" fill="url(#bg)"/>
+  <!-- Soundwave bars -->
+  <rect x="236" y="156" width="40" height="200" rx="20" fill="url(#accent)"/>
+  <rect x="176" y="196" width="32" height="120" rx="16" fill="#FF6B35" opacity="0.8"/>
+  <rect x="116" y="216" width="28" height="80" rx="14" fill="#FF6B35" opacity="0.45"/>
+  <rect x="304" y="196" width="32" height="120" rx="16" fill="#FF3CAC" opacity="0.8"/>
+  <rect x="368" y="216" width="28" height="80" rx="14" fill="#FF3CAC" opacity="0.45"/>
+  <!-- Signal arc -->
+  <path d="M 176 196 Q 256 120 336 196" fill="none" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+  <path d="M 140 176 Q 256 80 372 176" fill="none" stroke="url(#accent)" stroke-width="5" stroke-linecap="round" opacity="0.25"/>
+</svg>

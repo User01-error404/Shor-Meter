@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :root {
+    --glass-bg: rgba(17, 5, 33, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --accent-orange: #FF6B35;
+    --accent-pink: #FF3CAC;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: linear-gradient(135deg, #0f0c29 0%, #1a1040 35%, #24243e 65%, #0f3460 100%);
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 0; }
+  textarea, input { font-family: 'Plus Jakarta Sans', sans-serif; }
+  input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.35); }
+}
+
+/* Glass utilities */
+.glass {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.glass-light {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.glass-input {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.glass-input:focus {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,107,53,0.7);
+}
+
+/* Animations */
+@keyframes fadeUp    { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn    { from{opacity:0} to{opacity:1} }
+@keyframes scaleIn   { from{opacity:0;transform:scale(.9)} to{opacity:1;transform:scale(1)} }
+@keyframes slideUp   { from{opacity:0;transform:translateY(100%)} to{opacity:1;transform:translateY(0)} }
+@keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.88)} }
+@keyframes spin      { to{transform:rotate(360deg)} }
+@keyframes float     { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes glow-pulse{ 0%,100%{box-shadow:0 0 20px rgba(255,107,53,.3)} 50%{box-shadow:0 0 40px rgba(255,107,53,.6)} }
+
+.animate-fade-up   { animation: fadeUp .3s ease-out; }
+.animate-scale-in  { animation: scaleIn .3s ease-out; }
+.animate-slide-up  { animation: slideUp .25s ease-out; }
+.animate-float     { animation: float 3s ease-in-out infinite; }
+.animate-spin-slow { animation: spin .8s linear infinite; }
+.animate-glow      { animation: glow-pulse 2s ease-in-out infinite; }
+.animate-pulse-dot { animation: pulse-dot 1.5s ease-in-out infinite; }
+
+.press:active { transform: scale(0.97); }
+.chip-btn { transition: all .2s; }
+.nav-hover { transition: all .2s; }
